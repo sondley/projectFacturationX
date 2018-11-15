@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "sql10265064",
+    "password": "czlbkA6aYF",
+    "database": "sql10265064",
+    "host": "sql10.freemysqlhosting.net",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "dialect": "mysql"
+  }
+}
