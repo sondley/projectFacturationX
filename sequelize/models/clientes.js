@@ -4,8 +4,6 @@
 module.exports = Clientes;
 
 
-////////////////////////////////////////////////////////////
-
 
 function Clientes(objSequelize, objDataTypes) {
 
