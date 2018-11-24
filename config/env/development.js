@@ -6,7 +6,7 @@ module.exports = {
     database: process.env.DB_NAME || "sql10265064",
     password: process.env.DB_PASSWORD || "czlbkA6aYF",
     username: process.env.DB_USERNAME || "sql10265064",
-    host: process.env.DB_HOST || sql10.freemysqlhosting.net",
+    host: process.env.DB_HOST || "sql10.freemysqlhosting.net",
     port: process.env.DB_PORT || 3306,
     dialect: "mysql",
     logging: false,
