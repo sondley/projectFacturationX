@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "sql10265064",
-    "password": "czlbkA6aYF",
-    "database": "sql10265064",
-    "host": "sql10.freemysqlhosting.net",
+    "username": "root",//"sql10265064",
+    "password": "12345678",//"czlbkA6aYF",
+    "database": "mydb",//"sql10265064",
+    "host": "localhost",//"sql10.freemysqlhosting.net",
     "dialect": "mysql"
   },
   "test": {

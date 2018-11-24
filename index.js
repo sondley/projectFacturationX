@@ -5,6 +5,7 @@ const Hapi = require('hapi');
 const joi = require('joi');
 const Good = require('good');
 const Config = require('./config');
+const UsersHandler = require('./app/handlers/users');
 
 const UploadSingleFilePlugin = require('./app/plugins/upload-single-file');
 const SequelizeX = require('./blocks/sequelize-x').initialize(Config.sequelize, Config.sequelize, Config.modelsDir);
@@ -34,6 +35,10 @@ const objDatabaseConfig = {
     }
   ]
 };
+
+const objUsersModule = {
+  register: UsersHandler
+}
 
 
 const objUsuariosCrudConfig = {
@@ -126,13 +131,20 @@ server.register([objDatabaseConfig], (objError) => {
 
 
     server.start((objError) => {
-      server.table()[0].table.forEach((route) => console.log(`${route.method}\t${route.path}`));
+      server.register([objUsersModule], { routes: { prefix: '/users' } }, (objError) => {
+        server.table()[0].table.forEach((route) => console.log(`${route.method}\t${route.path}`));
 
-      if (objError) {
-          throw objError;
-      }
-      server.log('info', 'Server running at: ' + server.info.uri);
+        if (objError) {
+            throw objError;
+        }
+        server.log('info', 'Server running at: ' + server.info.uri);
+      });
     });
   });
   
 });
+
+
+
+
+

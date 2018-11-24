@@ -3,10 +3,10 @@
 
 module.exports = {
   sequelize: {
-    database: process.env.DB_NAME || "sql10265064",
-    password: process.env.DB_PASSWORD || "czlbkA6aYF",
-    username: process.env.DB_USERNAME || "sql10265064",
-    host: process.env.DB_HOST || "sql10.freemysqlhosting.net",
+    database: process.env.DB_NAME || "mydb",//"sql10265064",
+    password: process.env.DB_PASSWORD || "12345678",// "czlbkA6aYF",
+    username: process.env.DB_USERNAME || "root",//sql10265064",
+    host: process.env.DB_HOST || "localhost",//sql10.freemysqlhosting.net",
     port: process.env.DB_PORT || 3306,
     dialect: "mysql",
     logging: false,
