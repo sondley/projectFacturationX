@@ -41,7 +41,12 @@ function UsersModule(objServer, objOptions, fnNext) {
 
           
               if(objUser.dataValues.password==objRequest.payload.password){
-              fnReply({ statusCode: 200, results: _objUser });
+
+                if(objUser.dataValues.estado=='0'){
+                  fnReply({ statusCode: 200, results: _objUser });
+                }else{
+                  fnReply({ statusCode: 200, results: "estado no esta activo" });
+                }
             }else{
               fnReply({ statusCode: 200, results: "_contrasena Incorecta" });
             }
