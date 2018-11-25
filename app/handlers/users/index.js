@@ -42,7 +42,7 @@ function UsersModule(objServer, objOptions, fnNext) {
           
               if(objUser.dataValues.password==objRequest.payload.password){
 
-                if(objUser.dataValues.estado=='0'){
+                if(objUser.dataValues.estado=='1'){
                   fnReply({ statusCode: 200, results: _objUser });
                 }else{
                   fnReply({ statusCode: 200, results: "estado no esta activo" });
