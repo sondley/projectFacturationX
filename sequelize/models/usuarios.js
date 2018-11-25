@@ -50,7 +50,7 @@ function Usuarios(objSequelize, objDataTypes) {
         allowNull: false,
       },
       fecha: {
-        type: objDataTypes.DATE,
+        type: objDataTypes.STRING,
         defaultValue: true,
       },
       correo: {
