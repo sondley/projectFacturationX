@@ -43,6 +43,7 @@ function Usuarios(objSequelize, objDataTypes) {
       },
       cargo: {
         type: objDataTypes.STRING,
+        allowNull: true,
         defaultValue: '0',
       },
       usuario: {
@@ -73,3 +74,4 @@ function Usuarios(objSequelize, objDataTypes) {
 
   return Usuarios;
 };
+
