@@ -43,7 +43,7 @@ function Usuarios(objSequelize, objDataTypes) {
       },
       cargo: {
         type: objDataTypes.STRING,
-        allowNull: false
+        
       },
       usuario: {
         type: objDataTypes.STRING,
@@ -51,7 +51,7 @@ function Usuarios(objSequelize, objDataTypes) {
       },
       fecha: {
         type: objDataTypes.DATE,
-        allowNull: false
+        
       },
       correo: {
         type: objDataTypes.STRING,
