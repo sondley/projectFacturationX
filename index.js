@@ -6,6 +6,7 @@ const joi = require('joi');
 const Good = require('good');
 const Config = require('./config');
 const UsersHandler = require('./app/handlers/users');
+var cors = require('cors');
 
 const UploadSingleFilePlugin = require('./app/plugins/upload-single-file');
 const SequelizeX = require('./blocks/sequelize-x').initialize(Config.sequelize, Config.sequelize, Config.modelsDir);
