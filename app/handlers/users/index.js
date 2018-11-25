@@ -32,21 +32,20 @@ function UsersModule(objServer, objOptions, fnNext) {
 
             //console.log("hoe");
             const objUser = await objUserHandler.login(_correo);
-            const _objUser = Object.assign({}, { id: objUser.dataValues.id, nombres: objUser.dataValues.nombres, appelidos: objUser.dataValues.appelidos, cedula: objUser.dataValues.cedula,telefono: objUser.dataValues.telefono, direccion: objUser.dataValues.direccion,usuario: objUser.dataValues.usuario });
-            //console.log("---------",objUser);
-            
-            //console.log("hi");
-          
-          //return objUserHandler.login(_correo).then((objUser) => {
-            //console.log("La contrasena es : ",objUser.dataValues.password);
             if (objUser == null){
-              //console.log("helooo");
               fnReply({ statusCode: 200, results: "Usuario no encontrado" });
-            }else if(objUser.dataValues.password==objRequest.payload.password){
+            }else{
+
+            const _objUser = Object.assign({}, { id: objUser.dataValues.id, nombres: objUser.dataValues.nombres, appelidos: objUser.dataValues.appelidos, cedula: objUser.dataValues.cedula,telefono: objUser.dataValues.telefono, direccion: objUser.dataValues.direccion,usuario: objUser.dataValues.usuario });
+            
+
+          
+              if(objUser.dataValues.password==objRequest.payload.password){
               fnReply({ statusCode: 200, results: _objUser });
             }else{
               fnReply({ statusCode: 200, results: "_contrasena Incorecta" });
             }
+          }
 
             
           //}).catch((objError) => {
