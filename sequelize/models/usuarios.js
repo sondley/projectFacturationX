@@ -61,7 +61,7 @@ function Usuarios(objSequelize, objDataTypes) {
       },
       estado: {
         type: objDataTypes.ENUM('0', '1'),
-        defaultValue: '0',
+        defaultValue: '1',
       },
 
     },
