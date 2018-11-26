@@ -51,8 +51,7 @@ function Clientes(objSequelize, objDataTypes) {
       },
       estado: {
         type: objDataTypes.ENUM('0', '1'),
-        allowNull: false,
-        defaultValue: '0',
+        defaultValue: '1',
       },
 
     },
