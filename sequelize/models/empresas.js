@@ -46,10 +46,8 @@ function Empresas(objSequelize, objDataTypes) {
         unique: true,
       },
       estado: {
-        type: objDataTypes.ENUM,
-        values:['0','1'],
-        allowNull: false,
-        defaultValue: '0',
+        type: objDataTypes.ENUM('0', '1'),
+        defaultValue: '1',
       },
 
     },
