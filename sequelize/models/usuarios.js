@@ -39,7 +39,6 @@ function Usuarios(objSequelize, objDataTypes) {
       direccion: {
         type: objDataTypes.STRING,
         allowNull: false,
-        unique: true,
       },
       cargo: {
         type: objDataTypes.STRING,
