@@ -69,6 +69,12 @@ function Productos(sequelize, objDataTypes) {
       timestamps: true,
       underscored: true,
       paranoid: true,
+      associate: function(objModels) {
+        Productos.belongsTo(objModels.Categorias, {
+          foreignKey: 'categoria_id',allowNull: false,
+          as: 'Categoria'
+        });
+
 
     }
   );
