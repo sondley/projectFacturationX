@@ -74,8 +74,7 @@ function Productos(sequelize, objDataTypes) {
           foreignKey: 'categoria_id',allowNull: false,
           as: 'Categoria'
         });
-
-
+      }
     }
   );
 
