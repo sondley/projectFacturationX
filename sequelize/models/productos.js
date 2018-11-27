@@ -20,7 +20,7 @@ function Productos(sequelize, objDataTypes) {
         defaultValue: objDataTypes.UUIDV4
       },
       producto: {
-        type: objDataTypes.DATE,
+        type: objDataTypes.STRING,
         allowNull: false,
         unique: true,
       },
