@@ -19,10 +19,7 @@ function Ventas(sequelize, objDataTypes) {
         type: objDataTypes.UUID,
         defaultValue: objDataTypes.UUIDV4
       },
-      fecha_venta: {
-        type: objDataTypes.DATE,
-        allowNull: false
-      },
+     
       numero_venta: {
         type: objDataTypes.STRING,
         allowNull: false,
