@@ -87,7 +87,7 @@ function UsersModule(objServer, objOptions, fnNext) {
       }
     },
     {
-      method: 'Get',
+      method: 'GET',
       path: '/codigoBarra/:codigo_b',
       // auth: false,
       config: {
