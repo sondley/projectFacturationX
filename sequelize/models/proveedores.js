@@ -37,11 +37,7 @@ function Proveedores(objSequelize, objDataTypes) {
         allowNull: false,
         unique: true,
       },
-      
-      fecha: {
-        type: objDataTypes.DATE,
-        allowNull: false
-      },
+  
       correo: {
         type: objDataTypes.STRING,
         allowNull: false,
