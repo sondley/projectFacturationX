@@ -61,6 +61,11 @@ function Ventas(sequelize, objDataTypes) {
         allowNull: false,
 
       },
+       cantidad: {
+        type: objDataTypes.INTERGER,
+        allowNull: false,
+
+      },
       estado: {
         type: objDataTypes.ENUM('0', '1'),
         allowNull: false,
