@@ -85,6 +85,27 @@ function UsersModule(objServer, objOptions, fnNext) {
           });
         }
       }
+    },
+    {
+      method: 'Get',
+      path: '/codigoBarra/:codigo_b',
+      // auth: false,
+      config: {
+        auth: false,
+        handler: async function (objRequest, fnReply) {
+          const _codigo_b = objRequest.params.codigo_b;
+          const objProduct = await objUserHandler.CodigoBarra(_codigo_b);
+            if (objProduct == null){
+              fnReply({ statusCode: 200, results: "Producto no encontrado" });
+            }else{
+                if(objProduct.dataValues.estado=='1'){
+                  fnReply({ statusCode: 200, results: objProduct });
+                }else{
+                  fnReply({ statusCode: 200, results: "estado no esta activo" });
+                }
+            }
+        }
+      }
     }
     
 
