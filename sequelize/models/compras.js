@@ -19,10 +19,7 @@ function Compras(sequelize, objDataTypes) {
         type: objDataTypes.UUID,
         defaultValue: objDataTypes.UUIDV4
       },
-      fecha_compra: {
-        type: objDataTypes.DATE,
-        allowNull: false
-      },
+      
       numero_compra: {
         type: objDataTypes.STRING,
         allowNull: false,
