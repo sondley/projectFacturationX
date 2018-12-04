@@ -30,7 +30,7 @@ function Productos(sequelize, objDataTypes) {
         
       },
       unidad: {
-        type: objDataTypes.INTEGER,
+        type: objDataTypes.STRING,
         allowNull: false
       },
       moneda: {
