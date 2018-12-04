@@ -87,13 +87,13 @@ function UsersModule(objServer, objOptions, fnNext) {
       }
     },
     {
-      method: 'GET',
-      path: '/codigoBarra/:codigo_b',
+      method: 'POST',
+      path: '/codigoBarra',
       // auth: false,
       config: {
         auth: false,
         handler: async function (objRequest, fnReply) {
-          const _codigo_b = objRequest.params.codigo_b;
+          const _codigo_b = objRequest.payload.codigo_b;
           const objProduct = await objUserHandler.CodigoBarra(_codigo_b);
             if (objProduct == null){
               fnReply({ statusCode: 200, results: "Producto no encontrado" });
