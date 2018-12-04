@@ -47,7 +47,7 @@ function Proveedores(objSequelize, objDataTypes) {
         type: objDataTypes.ENUM,
         values:['0','1'],
         allowNull: false,
-        defaultValue: '0',
+        defaultValue: '1',
       },
 
     },
