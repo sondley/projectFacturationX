@@ -62,7 +62,7 @@ function Ventas(sequelize, objDataTypes) {
 
       },
        cantidad: {
-        type: objDataTypes.INTERGER,
+        type: objDataTypes.INTEGER,
         allowNull: false,
 
       },
