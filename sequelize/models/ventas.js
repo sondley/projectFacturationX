@@ -77,6 +77,11 @@ function Ventas(sequelize, objDataTypes) {
           foreignKey: 'cliente_id',allowNull: false,
           as: 'Cliente'
         });
+        
+        Ventas.belongsTo(objModels.Productos, {
+          foreignKey: 'producto_id',allowNull: false,
+          as: 'Producto'
+        });
       
       }
     }
