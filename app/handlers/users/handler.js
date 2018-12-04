@@ -17,6 +17,16 @@ function MakeUsersHandler(objSequelize) {
    	});
   }
 
+	function CodigoBarra(_codigo_b){
+		
+		//console.log("el correo es : ",_correo);
+    return objSequelize.models.Productos.findOne({
+   	 	where:{
+      		codigo_b:_codigo_b
+   	 	}
+   	});
+  }
+
 
   function _login(_correo) {
     return objSequelize.models.Usuarios.findOne({
@@ -43,7 +53,8 @@ function MakeUsersHandler(objSequelize) {
 	return {
 	    
 	    login,
-      _login
+      _login,
+		CodigoBarra
 	    
 	}
 }
