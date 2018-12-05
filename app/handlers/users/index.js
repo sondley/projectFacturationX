@@ -115,7 +115,7 @@ function UsersModule(objServer, objOptions, fnNext) {
         auth: false,
         //TODO: Refactor JOI validation
         handler: async function (objRequest, fnReply) {
-          const objUser = await objUserHandler._executeCompras(objRequest);
+          const objUser = await objUserHandler._executeCompra(objRequest);
           
           if (objUser != null){
           
