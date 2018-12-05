@@ -23,7 +23,7 @@ function Ventas(sequelize, objDataTypes) {
       numero_venta: {
         type: objDataTypes.STRING,
         allowNull: false,
-        unique: true,
+        
       },
       vendedor: {
         type: objDataTypes.STRING,
@@ -63,7 +63,7 @@ function Ventas(sequelize, objDataTypes) {
       },
        cantidad: {
         type: objDataTypes.INTEGER,
-        allowNull: false,
+        
 
       },
       estado: {
