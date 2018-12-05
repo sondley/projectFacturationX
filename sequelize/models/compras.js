@@ -23,7 +23,7 @@ function Compras(sequelize, objDataTypes) {
       numero_compra: {
         type: objDataTypes.STRING,
         allowNull: false,
-        unique: true,
+        
       },
       comprador: {
         type: objDataTypes.STRING,
@@ -50,6 +50,11 @@ function Compras(sequelize, objDataTypes) {
         allowNull: false,
         
       },
+      cantidad: {
+        type: objDataTypes.INTEGER,
+        
+
+      },
        descuento: {
         type: objDataTypes.DOUBLE,
         defaultValue: 0,
@@ -71,6 +76,11 @@ function Compras(sequelize, objDataTypes) {
         Compras.belongsTo(objModels.Proveedores, {
           foreignKey: 'proveedor_id',allowNull: false,
           as: 'Proveedor'
+        });
+
+        Compras.belongsTo(objModels.Productos, {
+          foreignKey: 'producto_id',allowNull: false,
+          as: 'Producto'
         });
       
       }
