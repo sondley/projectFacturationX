@@ -28,11 +28,7 @@ function MakeUsersHandler(objSequelize) {
   }
 
   function _create (_numero_venta,_vendedor,_moneda,_subtotal,_total_iva,_cliente_id,_total,_tipo_pago,_descuento,_importe,productos) {
-    console.log("helo");
-    //console.log(cliente_id);
-    //console.log(productos.producto_id);
-      //.log(productos.cantidad);
-  //create(objectVenta){
+    
     var putData = {
    numero_venta :_numero_venta,
     vendedor :_vendedor,
@@ -49,20 +45,13 @@ function MakeUsersHandler(objSequelize) {
 
   };
 
-  console.log("*****",putData);
-  return objSequelize.models.Ventas.create(putData).then(users=>{
-
-      return users;
-    });
-    
-    
-    
-    //newVenta.save();
+  
+  return objSequelize.models.Ventas.create(putData).
   }
 
 
   function _execute(objRequest){
-    //console.log(objRequest);
+    
     var numero_venta = objRequest.payload.numero_venta,
           vendedor = objRequest.payload.vendedor,
           moneda = objRequest.payload.moneda,
@@ -75,24 +64,17 @@ function MakeUsersHandler(objSequelize) {
           cliente_id = objRequest.payload.cliente_id;
 
 
-          //console.log(cliente_id);
+          
 
           var productos= objRequest.payload.productos;
           var lengthProduct= productos.length;
           console.log(lengthProduct);
 
           productos.forEach(function(element) {
-            //console.log("*********",element);
+           console.log(element);
             _create(numero_venta,vendedor,moneda,subtotal,total_iva,cliente_id,total,tipo_pago,descuento,importe,element)
-            //console.log("*********",element);
+            console.log(element);
           });
-
-          /*for(var i=0; i<lengthProduct; i++){
-            console.log("i: ", i);
-            return _create(numero_venta,vendedor,moneda,subtotal,total_iva,cliente_id,total,tipo_pago,descuento,importe,productos[i]).then(object=>{
-              return object;
-            });
-          }*/
   }
 
   function _login(_correo) {
@@ -103,16 +85,6 @@ function MakeUsersHandler(objSequelize) {
     }).then(users=>{
 
       return users;
-
-      /*const _users = users.map((objUser) => objUser.user_id);
-      return objSequelize.models.Videos.findAll({
-        where: {
-          user_id: { in : _users}
-        },
-        order: [
-          ['id', 'DESC']
-        ],limit:5
-      })*/
     })
   }
 
