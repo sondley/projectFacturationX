@@ -32,7 +32,7 @@ const objDatabaseConfig = {
       models: ['./sequelize/models/*.js'],
       sequelize: SequelizeX.sequelize,
       sync: true,
-      forceSync: false
+      forceSync: true
     }
   ]
 };
