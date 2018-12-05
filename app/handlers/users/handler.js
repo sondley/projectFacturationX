@@ -150,7 +150,7 @@ function MakeUsersHandler(objSequelize) {
 
           productos.forEach(function(element) {
             //console.log("*********",element);
-            _create(numero_compra,comprador,moneda,subtotal,total_iva,proveedor_id,total,tipo_pago,descuento,importe,element)
+            _createCompra(numero_compra,comprador,moneda,subtotal,total_iva,proveedor_id,total,tipo_pago,descuento,importe,element)
             //console.log("*********",element);
           });
 
