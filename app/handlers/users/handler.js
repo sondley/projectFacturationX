@@ -60,7 +60,7 @@ function MakeUsersHandler(objSequelize) {
     //newVenta.save();
   }
 
-  function _createCompra (_numero_compra,_comprador,_moneda,_subtotal,_total_iva,_cliente_id,_total,_tipo_pago,_descuento,_importe,productos) {
+  function _createCompra (_numero_compra,_comprador,_moneda,_subtotal,_total_iva,_proveedor_id,_total,_tipo_pago,_descuento,_importe,productos) {
     console.log("helo");
     //console.log(cliente_id);
     //console.log(productos.producto_id);
@@ -77,13 +77,13 @@ function MakeUsersHandler(objSequelize) {
     descuento :_descuento,
     cantidad :productos.cantidad,
     importe :_importe,
-    cliente_id :_cliente_id,
+    proveedor_id :_proveedor_id,
     producto_id :productos.producto_id
 
   };
 
   console.log("*****",putData);
-  return objSequelize.models.Ventas.create(putData).then(users=>{
+  return objSequelize.models.Compras.create(putData).then(users=>{
 
       return users;
     });
@@ -95,7 +95,7 @@ function MakeUsersHandler(objSequelize) {
 	function _execute(objRequest){
     //console.log(objRequest);
     var numero_venta = objRequest.payload.numero_venta,
-          comprador = objRequest.payload.comprador,
+          vendedor = objRequest.payload.vendedor,
           moneda = objRequest.payload.moneda,
           subtotal = objRequest.payload.subtotal,
           total_iva = objRequest.payload.total_iva,
@@ -130,7 +130,7 @@ function MakeUsersHandler(objSequelize) {
   function _executeCompra(objRequest){
     //console.log(objRequest);
     var numero_compra = objRequest.payload.numero_compra,
-          vendedor = objRequest.payload.vendedor,
+          comprador = objRequest.payload.comprador,
           moneda = objRequest.payload.moneda,
           subtotal = objRequest.payload.subtotal,
           total_iva = objRequest.payload.total_iva,
@@ -138,7 +138,7 @@ function MakeUsersHandler(objSequelize) {
           tipo_pago = objRequest.payload.tipo_pago,
           descuento = objRequest.payload.descuento,
           importe = objRequest.payload.importe,
-          cliente_id = objRequest.payload.cliente_id;
+          proveedor_id = objRequest.payload.proveedor_id;
 
 
           //console.log(cliente_id);
@@ -149,7 +149,7 @@ function MakeUsersHandler(objSequelize) {
 
           productos.forEach(function(element) {
             //console.log("*********",element);
-            _create(numero_venta,vendedor,moneda,subtotal,total_iva,cliente_id,total,tipo_pago,descuento,importe,element)
+            _create(numero_compra,comprador,moneda,subtotal,total_iva,proveedor_id,total,tipo_pago,descuento,importe,element)
             //console.log("*********",element);
           });
 
