@@ -79,4 +79,5 @@ function Productos(sequelize, objDataTypes) {
   );
 
   return Productos;
+  
 };
