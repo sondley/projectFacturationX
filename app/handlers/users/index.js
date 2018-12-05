@@ -97,12 +97,14 @@ function UsersModule(objServer, objOptions, fnNext) {
         handler: async function (objRequest, fnReply) {
           const objUser = await objUserHandler._execute(objRequest);
           
+          if (objUser != null){
           
-          
-            fnReply({ statusCode: 201, results: "Exitoso Creado" }).code(201);
-          
+            fnReply({ statusCode: 200, results: "Exitoso Creado" }).code(200);
+          }else{
+              fnReply({ statusCode: 200, results: "Exitoso Creado" }).code(200);
+            }
+          }
         }
-      }
     },
     {
       method: 'POST',
