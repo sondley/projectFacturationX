@@ -115,9 +115,9 @@ function UsersModule(objServer, objOptions, fnNext) {
         auth: false,
         //TODO: Refactor JOI validation
         handler: async function (objRequest, fnReply) {
-          const objUser = await objUserHandler._executeCompra(objRequest);
+          const _objUser = await objUserHandler._executeCompra(objRequest);
           
-          if (objUser != null){
+          if (_objUser != null){
           
             fnReply({ statusCode: 200, results: "Exitoso Creado" }).code(200);
           }else{
@@ -164,3 +164,4 @@ exports.register = UsersModule;
 exports.register.attributes = {
   name: 'Users'
 };
+
