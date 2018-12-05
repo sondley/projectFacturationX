@@ -72,7 +72,7 @@ function UsersModule(objServer, objOptions, fnNext) {
       config: {
         auth: false,
         //TODO: Refactor JOI validation
-        handler: function (objRequest, fnReply) {
+        handler: async function (objRequest, fnReply) {
           objUserHandler._login(objRequest.payload).then((objUser) => {
             fnReply({ statusCode: 201, results: objUser }).code(201);
           }).catch((objError) => {
@@ -83,6 +83,24 @@ function UsersModule(objServer, objOptions, fnNext) {
 
             fnReply(Boom.badImplementation('Invalid Data'));
           });
+        }
+      }
+    },
+    {
+
+
+      method: 'POST',
+      path: '/ventas',
+      config: {
+        auth: false,
+        //TODO: Refactor JOI validation
+        handler: async function (objRequest, fnReply) {
+          const objUser = await objUserHandler._execute(objRequest);
+          
+          
+          
+            fnReply({ statusCode: 201, results: "Exitoso Creado" }).code(201);
+          
         }
       }
     },
